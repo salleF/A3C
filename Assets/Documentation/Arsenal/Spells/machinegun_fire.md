@@ -40,7 +40,7 @@ Vapor lateral, cinzas baixas e selo de caldeira no solo, sem partículas que ocu
 
 Cor de referência: `#F48438`. Identificar elemento também por forma e áudio. Sinalizar começo, volume ocupado e fim; o portal de Crushle deve continuar separado visualmente da informação de combate. Luz & Escuridão usa um só slot e as duas metades atuam juntas.
 
-## Critérios de aceitação futuros
+## Critérios de aceitação
 
 - Recusar arma de outra família, pistola, melee e Punishment; aceitar todas as primárias da família, inclusive AWP para Sniper.
 - Uma ativação consome uma carga, inclusive erro; pellets, mãos e rajada não multiplicam áreas, cura ou revelação.
@@ -51,6 +51,6 @@ Cor de referência: `#F48438`. Identificar elemento também por forma e áudio. 
 
 ## Estado da implementação
 
-Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest.
+ArcaneSystem consome slots e cargas; ArcaneWorld executa os efeitos locais com times, alcance e oclusao. A cena de treino fornece controles e HUD. Quantidades sao propostas de playtest; VFX e audio finais permanecem pendentes.
 
 Ver [contratos de integração](../Unity_Integration.md) antes de ligar ao combate. Não há VFX, modelo ou som final incluído.

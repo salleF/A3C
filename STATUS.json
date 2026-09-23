@@ -1,23 +1,20 @@
 {
-  "task": "Revisar A3C e continuar os arquivos de todas as armas e magias conforme Core_gameplay.txt",
-  "updated_at": "2026-09-22T22:31:57-03:00",
-  "phase": "delivered_static_validation_passed",
+  "task": "Instalar Unity, implementar armas e S.A.A. em treino local, validar build e publicar o codigo",
+  "updated_at": "2026-09-23T00:11:57.867836-03:00",
+  "phase": "release_validated_visual_qa_pending",
   "repository": "https://github.com/salleF/A3C",
   "workspace": "C:\\Users\\Matheus\\Documents\\Pessoal\\A3C",
   "baseline_commit": "8686851ee9f54d3a92410c4d4d8d0f327cd4a487",
   "completed": [
-    "Clone completo da main, inicialmente sem modificacoes locais",
-    "Leitura de Core_gameplay.txt, lore Crushle, documento de arsenal e scripts do prototipo",
-    "Confirmado: E: nao existe nesta maquina; documentos equivalentes presentes no clone",
-    "Nenhum AGENTS.md, CLAUDE.md ou registro de estado no repositorio original; nenhum indice de memoria Claude encontrado para os caminhos local e E--A3C",
-    "Inspecao estatica de SampleScene (73 GameObjects), recovery (30), dois OBJ e Animator; inventario de falhas para relatorio",
-    "Schema aditivo WeaponData, ArcaneCartridgeData, ArsenalCatalog e inspectores informativos criados",
-    "Catalogo serializado criado: 21 armas, 25 cartuchos e 46 fichas individuais",
-    "Relatorio de revisao e guia de integracao criados com limites de runtime e editor explicitos",
-    "Documento antigo de arsenal substituido por indice sem tabelas conflitantes; novos arquivos com metadados Unity",
-    "Validacao estatica aprovada: 21 armas, 25 cartuchos, 46 fichas, dano competitivo, simetria, matriz S.A.A., schemas C#, GUIDs e links",
-    "git diff --check aprovado e verificados espacos finais tambem nos arquivos novos",
-    "git pull --ff-only confirmou Already up to date; cenas, modelos e scripts de combate existentes preservados, exceto extensao aditiva de WeaponData"
+    "Repositorio clonado e revisado; catalogo e fichas publicados no commit 4e31d7d1048ec624758fc1097782585f0fb60299",
+    "Unity Hub instalado; usuario entrou na conta e concluiu instalacao do Editor 6000.6.2f1 com suporte Windows",
+    "Editor reconheceu licenca e importou/compilou projeto; ProjectVersion e serializacao URP atualizados pelo editor",
+    "Implementados municao por mao, Punishment, rajada, choke, aquecimento, melee, projeteis, headshots, coletes e times",
+    "Implementados slots Q/E/C, consumo por acionamento e os oito tipos de efeito usados nos 25 cartuchos",
+    "Criada A3C_Training com arsenal, carteira de treino, HUD, alvos, aliado ferido e objetivo de plantar/despertar",
+    "497 verificacoes no editor e 146 no executavel passaram; build final WindowsRelease sem Development Build gerado",
+    "Validacao estatica: 21 armas, 25 cartuchos, 46 fichas, limites, schemas, GUIDs e links aprovados",
+    "Documentacao atualizada; mapa e modelos originais preservados; configuracoes de servicos Unity restauradas apos alteracao automatica do editor"
   ],
   "decisions": [
     "Core_gameplay.txt prevalece sobre A3C_Arsenal_Design.md quando houver conflito",
@@ -25,13 +22,14 @@
     "Valores que o roteiro nao define serao identificados como propostas de balanceamento",
     "Commit e push na main autorizados explicitamente pelo usuario",
     "Trabalho sequencial, conforme preferencia global do usuario",
-    "Usuario confirmou: fichas + assets configuraveis no Unity; mecanicas jogaveis completas fora desta entrega"
+    "Usuario ampliou o escopo: instalar Unity, configurar e implementar as mecanicas do prototipo",
+    "Instalar editor 6000.6.1f1 e ferramentas Windows necessarias; nao modificar configuracoes de Windows nem instalar modulos de plataformas alheias ao projeto",
+    "Implementar prototipo local jogavel e verificavel com todas as armas/cartuchos; multiplayer competitivo em rede exige fase propria de arquitetura e validacao",
+    "Punishment restaura 6+6 ao encerrar o trunfo, sem debitar reserva: recarga especial explicita; R usa reserva de 21"
   ],
   "pending": [
-    "Em maquina com Unity 6000.6.1f1: importar, conferir Console e Inspector, validar compilacao e Play Mode",
-    "Antes de implementar a economia: definir custo da recarga especial de Punishment mantendo retorno 6+6 exigido pelo roteiro",
-    "Proxima fase de desenvolvimento, fora do escopo escolhido: corrigir runtime na ordem do relatorio e implementar controladores especiais, executor S.A.A. e rodada do Dragao",
-    "Depois da integracao: playtest 5v5 de valores propostos, arte e legibilidade do mapa/modelos"
+    "Usuario clicar Cancelar na janela de firewall de a3c.exe do build de desenvolvimento; skill computer-use proibe agir em pedidos de seguranca",
+    "Conferir interface e controles no build final Builds/WindowsRelease/A3C.exe apos dialogo ser fechado"
   ],
   "resume": {
     "read_first": [
@@ -42,25 +40,36 @@
     "commands": [
       "git status --short --branch",
       "python Tools/validate_arsenal.py",
+      "./Tools/unity-verify.ps1 -EditorPath \"C:/Program Files/Unity/Hub/Editor/6000.6.2f1/Editor/Unity.exe\"",
       "git diff --check"
     ],
-    "unity_version": "6000.6.1f1",
-    "unity_editor": "Nao encontrado no PATH nem em C:/Program Files/Unity/Hub/Editor",
-    "authoring_script": "C:/Users/Matheus/AppData/Local/Temp/a3c-author-catalog.py (bootstrap ja executado; nao reexecutar sobre edicoes de Inspector)"
+    "unity_version": "6000.6.2f1",
+    "unity_editor": "C:/Program Files/Unity/Hub/Editor/6000.6.2f1/Editor/Unity.exe",
+    "authoring_script": "C:/Users/Matheus/AppData/Local/Temp/a3c-author-catalog.py (bootstrap ja executado; nao reexecutar sobre edicoes de Inspector)",
+    "verification_session": "35694 concluida com exit code 0",
+    "runtime_document_migration": ".git/a3c-runtime-doc-migration.py (ja executado; nao sobrescrever futuras edicoes de fichas)",
+    "open_debug_game_pid": 3824
   },
   "verification": {
     "python Tools/validate_arsenal.py": "PASS",
     "git diff --check": "PASS",
     "new_file_whitespace": "PASS",
-    "unity_import_compile_playmode": "NOT RUN: Unity Editor nao encontrado",
-    "visual_map_model_qa": "NOT RUN: inspecao estatica de cenas/OBJ/Animator; FBX inventariados sem renderizacao"
+    "unity_import_compile_playmode": "PASS: importacao/compilacao Unity 6000.6.2f1, 497 verificacoes editor, build Windows e 146 verificacoes runtime no executavel",
+    "visual_map_model_qa": "PENDING: janela de firewall impede captura do jogo. Mapa/modelos originais revisados estaticamente, sem playtest competitivo.",
+    "unity_csharp_compile": "PASS final: zero error CS e zero warning CS em scripts proprios",
+    "unity_editor_rules": "PASS 497 assertions, Logs/a3c-editor-verification.json",
+    "windows_build": "PASS Windows x64 Mono Release, 108250152 bytes segundo BuildReport",
+    "runtime_rules": "PASS 146 assertions no build final, Logs/a3c-runtime-verification.json",
+    "notes": "O editor imprimiu avisos internos de alocacao no encerramento; nao houve falha de build/testes. Runtime reportou passed=true e error vazio."
   },
   "artifacts": {
     "catalog": "Assets/Data/Arsenal/ArsenalCatalog.asset",
     "sheets": "Assets/Documentation/Arsenal/README.md",
     "review": "Assets/Documentation/A3C_Project_Review.md",
     "integration": "Assets/Documentation/Arsenal/Unity_Integration.md",
-    "validator": "Tools/validate_arsenal.py"
+    "validator": "Tools/validate_arsenal.py",
+    "windows_build": "Builds/WindowsRelease/A3C.exe",
+    "build_exe_sha256": "af88b840e599661ac63fc10ae27ac77dd97cd46b44df8a7ce60eb0dcfacfc99e"
   },
   "source_encoding": {
     "Core_gameplay.txt": "Windows-1252",
@@ -72,5 +81,27 @@
     "branch": "main",
     "local_result": ".git/codex-publication-status.json",
     "verify_command": "git status --short --branch; git ls-remote origin refs/heads/main"
-  }
+  },
+  "installation": {
+    "initial_free_bytes": 28542799872,
+    "editor_version": "6000.6.2f1",
+    "changeset": "770e33f6875c",
+    "hub_source": "winget Unity.UnityHub",
+    "hub_installed": "3.21.3.65535 (MSIX)",
+    "editor_installer": "C:/Users/Matheus/AppData/Local/A3C-Setup/UnitySetup64-6000.6.1f1.exe",
+    "editor_download_session": 93478,
+    "authentication": "Unity Editor confirmou Successfully resolved entitlement details",
+    "editor_installation": "PASS instalado em C:/Program Files/Unity/Hub/Editor/6000.6.2f1; windowsstandalonesupport",
+    "free_bytes_last_observed": 1212411904,
+    "cleanup_permission_pending": "Instalador antigo preservado; exclusao deixou de ser necessaria apos liberacao de temporarios da instalacao. Nao excluir sem resposta afirmativa."
+  },
+  "runtime_progress": [
+    "Runtime integrado ao catalogo e compilado sem erros ou avisos C# proprios na verificacao final",
+    "Build final e testes aprovados; QA visual nao concluido devido a dialogo de firewall do Windows"
+  ],
+  "limitations": [
+    "Prototipo local, sem multiplayer em rede 5v5, matchmaking ou servidor autoritativo",
+    "Compra e reinicio sao exercicios de treino, sem economia entre rounds ou bots taticos de equipe",
+    "Modelos, animacoes, som e VFX finais e integracao do mapa original seguem pendentes; treino usa visuais procedurais"
+  ]
 }

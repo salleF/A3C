@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 2
   priceCR: 1650
   gameplaySummary: "Rifle de rajada de três tiros sequenciais por clique. Cada bala consome uma unidade do pente. Uma ativação S.A.A. pertence à rajada e gera um único efeito no primeiro impacto válido."
-  implementationNotes: "burstCount já existia, mas não é consumido por WeaponController. Requer agenda de rajada e cancelamento. A redução de dano na terceira bala da proposta antiga foi retirada por não constar no roteiro."
+  implementationNotes: "WeaponController executa a rajada em intervalos configurados, com consumo por bala e uma unica ativacao arcana. Troca, morte e recarga cancelam a sequencia."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/arcane_famas.md"
   bodyDamage: 35
   headshotDamage: 86

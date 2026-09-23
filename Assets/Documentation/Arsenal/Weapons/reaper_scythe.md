@@ -41,12 +41,12 @@ Haste longa de madeira escura, contrapeso de cobre e lâmina curva segmentada po
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Dois inimigos dentro do arco podem receber dano; um atrás de parede não. Colliders de cabeça e corpo do mesmo alvo não duplicam dano.
 
 ## Estado da implementação
 
-Requer controlador melee com deduplicação por HealthSystem e teste de oclusão. O modo genérico de projétil não executa sweep.
+WeaponController executa sweep com deduplicacao por alvo e oclusao. Cada inimigo recebe no maximo um golpe por acionamento.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

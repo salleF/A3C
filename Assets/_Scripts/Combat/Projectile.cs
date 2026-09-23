@@ -4,111 +4,41 @@ namespace A3C.Combat
 {
     public class Projectile : MonoBehaviour
     {
-        [Header("Configuracao")]
         public float lifeTime = 5f;
         public LayerMask hitMask = ~0;
+        private float bodyDamage, headDamage, speed, remaining, barrierMultiplier;
+        private HealthSystem shooter;
+        private ArcaneCast cast;
+        private bool initialized;
 
-        private float bodyDamage = 40f;
-        private float headDamage = 160f;
-        private float speed = 120f;
-        private HealthSystem shooterHealth;
-        private Collider[] shooterColliders;
-        private Vector3 lastPosition;
-        private bool isInitialized = false;
-
-        public void Initialize(float bodyDmg, float headDmg, float projSpeed, HealthSystem shooter)
+        public void Initialize(float bodyDmg, float headDmg, float projSpeed, HealthSystem owner,
+            float range = 100f, ArcaneCast arcaneCast = null, float barrierDamageMultiplier = 1f)
         {
             bodyDamage = bodyDmg;
             headDamage = headDmg;
-            speed = projSpeed;
-            shooterHealth = shooter;
-            if (shooter != null)
-            {
-                shooterColliders = shooter.GetComponentsInChildren<Collider>();
-            }
-
-            lastPosition = transform.position;
-            isInitialized = true;
-
-            Destroy(gameObject, lifeTime);
+            speed = Mathf.Max(1f, projSpeed);
+            shooter = owner;
+            remaining = Mathf.Max(0f, range);
+            cast = arcaneCast;
+            barrierMultiplier = barrierDamageMultiplier;
+            initialized = true;
+            foreach (var col in GetComponentsInChildren<Collider>()) col.enabled = false;
+            Destroy(gameObject, Mathf.Max(lifeTime, remaining / speed + 0.1f));
         }
-
         void Update()
         {
-            if (!isInitialized) return;
-
-            float moveStep = speed * Time.deltaTime;
-            Vector3 nextPosition = transform.position + transform.forward * moveStep;
-
-            Vector3 direction = nextPosition - lastPosition;
-            float distance = direction.magnitude;
-
-            if (distance > 0f)
+            if (!initialized) return;
+            float distance = Mathf.Min(remaining, speed * Time.deltaTime);
+            if (CombatPhysics.FirstHit(transform.position, transform.forward, distance, shooter, out var hit, hitMask))
             {
-                RaycastHit[] hits = Physics.RaycastAll(lastPosition, direction.normalized, distance, hitMask);
-                
-                // Ordena por distancia para pegar o impacto mais proximo primeiro
-                System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
-
-                foreach (var hit in hits)
-                {
-                    // Ignora colisor da propria bala
-                    if (hit.collider.gameObject == gameObject) continue;
-
-                    // Ignora colisores do pr?prio jogador que disparou
-                    if (IsShooterCollider(hit.collider)) continue;
-
-                    // Ignora triggers que nao sejam alvos
-                    if (hit.collider.isTrigger && !hit.collider.GetComponentInParent<TargetDummy>()) continue;
-
-                    OnHit(hit);
-                    return;
-                }
+                CombatPhysics.Damage(hit, bodyDamage, headDamage, shooter, barrierMultiplier);
+                cast?.Impact(hit.point, hit.normal);
+                Destroy(gameObject);
+                return;
             }
-
-            lastPosition = transform.position;
-            transform.position = nextPosition;
-        }
-
-        private bool IsShooterCollider(Collider col)
-        {
-            if (shooterHealth != null)
-            {
-                if (col.transform.IsChildOf(shooterHealth.transform)) return true;
-                if (shooterColliders != null)
-                {
-                    for (int i = 0; i < shooterColliders.Length; i++)
-                    {
-                        if (shooterColliders[i] == col) return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        private void OnHit(RaycastHit hit)
-        {
-            // Acertou TargetDummy de treino
-            var targetDummy = hit.collider.GetComponentInParent<TargetDummy>();
-            if (targetDummy != null)
-            {
-                bool isHead = hit.collider.CompareTag("Head");
-                float dmg = isHead ? headDamage : bodyDamage;
-                targetDummy.TakeHit(dmg, isHead, shooterHealth);
-            }
-            else
-            {
-                // Acertou inimigo com HealthSystem
-                var health = hit.collider.GetComponentInParent<HealthSystem>();
-                if (health != null)
-                {
-                    bool isHead = hit.collider.CompareTag("Head");
-                    float dmg = isHead ? headDamage : bodyDamage;
-                    health.TakeDamage(dmg);
-                }
-            }
-
-            Destroy(gameObject);
+            transform.position += transform.forward * distance;
+            remaining -= distance;
+            if (remaining <= 0f) Destroy(gameObject);
         }
     }
 }

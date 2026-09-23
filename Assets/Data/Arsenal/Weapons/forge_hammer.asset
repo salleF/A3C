@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 4
   priceCR: 700
   gameplaySummary: "Golpe físico pesado. Bônus de 50% contra barreiras e paredes mágicas destrutíveis; sem bônus contra jogadores ou arquitetura permanente de Crushle. Não usa S.A.A."
-  implementationNotes: "Requer controlador melee e interface de barreira destrutível. barrierDamageMultiplier não é lido pelo runtime atual."
+  implementationNotes: "WeaponController executa golpe com oclusao e aplica barrierDamageMultiplier somente a ArcaneBarrier."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/forge_hammer.md"
   bodyDamage: 60
   headshotDamage: 130

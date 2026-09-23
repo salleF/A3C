@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 3
   priceCR: 1050
   gameplaySummary: "Escopeta de alavanca com seis bagos. Segurar LMB concentra por até 0,8 s; soltar dispara. Choke reduz dispersão até 35% do valor original e não aumenta dano. Soltar cedo ainda dispara com a concentração parcial."
-  implementationNotes: "O WeaponController atual dispara ao pressionar LMB. Requer implementação de carga/soltura e interpolação de spread para este asset."
+  implementationNotes: "WeaponController concentra enquanto LMB esta pressionado e dispara ao soltar. O choke interpola a dispersao, sem alterar dano."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/lever_action.md"
   bodyDamage: 30
   headshotDamage: 32

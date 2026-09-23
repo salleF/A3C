@@ -22,13 +22,13 @@ Regras fixadas pelo roteiro:
 
 ## Propostas desta entrega
 
-Preços de armas, reservas não fixadas, cadência, dispersão, dano não canônico, dimensões, tempos e efeitos são ponto de partida para playtest, não decisões aprovadas por teste. Nenhum playtest foi executado nesta máquina.
+Preços de armas, reservas não fixadas, cadência, dispersão, dano não canônico, dimensões, tempos e efeitos são ponto de partida para playtest, não decisões aprovadas por teste. Os testes técnicos estão descritos no guia de integração; balanceamento competitivo ainda exige playtest 5v5.
 
 1. Magias são utilidades sem dano adicional, para preservar as duas exceções de hitkill. Removidos da proposta antiga: dano que ignora escudo, HS extra, ricochetes letais e revelação global.
 2. Cartucho comprado contém três cargas. Armar Q/E/C afeta o próximo acionamento; não converte automaticamente todo o pente. Rajada, pellets e disparo duplo geram uma única aplicação.
 3. Somente Sniper, cuja família inclui Suporte, oferece cura de HP reais. Efeitos de escudo não se confundem com cura.
 4. Choke concentra a dispersão e não aumenta dano. Máximo por disparo: TriShot duplo 180 HS; Sawed-Off 192 HS; Lever-Action 192 HS.
-5. Punishment deve retornar às pistolas carregadas com 6+6, como exige o roteiro. O custo dessa recarga especial na reserva de 21 não foi definido pelo roteiro e fica pendente para a implementação da economia; não alterar silenciosamente o retorno para um pente parcial.
+5. Punishment deve retornar às pistolas carregadas com 6+6, como exige o roteiro. Decisão do protótipo: a recarga especial não debita a reserva de 21; a recarga manual usa a reserva.
 6. E prioriza despertar o Dragão quando houver interação válida. Não consome magia enquanto o defensor sustenta a interação.
 7. As duas mãos de Lust & Greed compartilham cadência e não disparam simultaneamente, evitando 204 de HS em um único acionamento.
 

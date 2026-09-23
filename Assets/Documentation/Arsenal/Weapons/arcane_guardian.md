@@ -41,12 +41,12 @@ Madeira alongada, caixa de culatra de latão e mira rúnica simples. Silhueta es
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 LMB segurado não repete tiros. Um HS deixa 40 HP no alvo de colete pesado. Nenhuma configuração de cartucho ultrapassa o teto de rifle.
 
 ## Estado da implementação
 
-WeaponController lê dano, cadência, pente, reserva e dispersão. Visual, alcance efetivo e regras especiais novos são dados de design; não há prefab exclusivo, áudio ou S.A.A. executável.
+WeaponController executa este asset com municao persistente por arma, cadencia, dispersao, alcance e recarga. A cena de treino permite selecionar o equipamento. Arte e audio finais permanecem pendentes.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

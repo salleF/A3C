@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 1
   priceCR: 1050
   gameplaySummary: "SMG automática de avanço. Pente amplo e grande dispersão sustentada. Aceita os cinco cartuchos de SMG nos três slots Q/E/C."
-  implementationNotes: "WeaponController lê dano, cadência, pente, reserva e dispersão. Visual, alcance efetivo e regras especiais novos são dados de design; não há prefab exclusivo, áudio ou S.A.A. executável."
+  implementationNotes: "WeaponController executa este asset com municao persistente por arma, cadencia, dispersao, alcance e recarga. A cena de treino permite selecionar o equipamento. Arte e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/runic_p90.md"
   bodyDamage: 22
   headshotDamage: 38

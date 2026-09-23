@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 0
   priceCR: 500
   gameplaySummary: "Pistola mecânica silenciada, sem traçantes. LMB semiautomático; não usa cartuchos elementais. O impacto ainda informa ao alvo que houve dano."
-  implementationNotes: "O controlador atual sempre cria projétil visível no fallback e não lê silenced/visibleTracer. Implementar apresentação antes de considerar o silenciamento funcional."
+  implementationNotes: "WeaponController executa tiro e recarga; projeteis ficam invisiveis e o som procedural usa volume reduzido. Arte e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/ghost.md"
   bodyDamage: 26
   headshotDamage: 78

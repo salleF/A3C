@@ -41,12 +41,12 @@ Conjunto rotativo de canos de latão, reservatório de vapor protegido e travas 
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Sem bala antes de 1 s de aquecimento. Soltar gatilho cancela giro. 100 tiros totais, sem reserva inicial. Uma zona por carga ativada, não vinte zonas por segundo de gatilho.
 
 ## Estado da implementação
 
-WeaponController dispara imediatamente e PlayerMovement ignora equippedMoveMultiplier. Implementar aquecimento e penalidade de movimento; o asset não torna essas funções jogáveis.
+WeaponController exige aquecimento continuo antes de disparar. Soltar o gatilho, trocar arma ou abrir o menu zera o aquecimento. PlayerMovement aplica o peso equipado.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

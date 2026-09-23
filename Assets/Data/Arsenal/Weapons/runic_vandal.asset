@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 1
   priceCR: 2900
   gameplaySummary: "Rifle automático de alto impacto. HS fixado em 160 pelo roteiro. Bom primeiro tiro e dispersão crescente; cartuchos de Bloqueio e Observação."
-  implementationNotes: "WeaponController lê dano, cadência, pente, reserva e dispersão. Visual, alcance efetivo e regras especiais novos são dados de design; não há prefab exclusivo, áudio ou S.A.A. executável."
+  implementationNotes: "WeaponController executa este asset com municao persistente por arma, cadencia, dispersao, alcance e recarga. A cena de treino permite selecionar o equipamento. Arte e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/runic_vandal.md"
   bodyDamage: 40
   headshotDamage: 160

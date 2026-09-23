@@ -26,7 +26,7 @@ MonoBehaviour:
   activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
   counterplay: "Virar o rosto ou usar cobertura quebra a exposição ao ofuscamento. O som de duas notas avisa a ativação."
   visualDirection: "Anéis branco e negro entrelaçados, runa bipartida e contraste de forma além da cor."
-  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  implementationNotes: "ArcaneSystem consome slots e cargas; ArcaneWorld executa os efeitos locais com times, alcance e oclusao. A cena de treino fornece controles e HUD. Quantidades sao propostas de playtest; VFX e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Spells/smg_light_dark.md"
   effectColor: {r: 0.862745, g: 0.827451, b: 0.960784, a: 1}
   effects:
@@ -39,6 +39,8 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 0
     rules: "A metade de Luz acelera 10%; não empilha bônus."
   - kind: 6
     target: 2
@@ -49,4 +51,6 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 0
     rules: "A metade de Escuridão ofusca até 40%, somente com linha de visão e alvo olhando o impacto."

@@ -31,3 +31,4 @@ Thumbs.db
 
 # Scratch / temp files
 erros.txt
+/Tools/__pycache__/

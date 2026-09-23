@@ -41,12 +41,12 @@ Tambor de uma câmara, contrapeso de forja e trava de cobre marcada com seis ent
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 HS elimina 200 HP. Corpo causa 150, deixando 50. Um erro também retorna às pistolas. Não encadear Punishment sem esvaziar novamente um par completo de 6+6.
 
 ## Estado da implementação
 
-Requer estado especial no futuro controlador de Lust & Greed. O retorno deve restaurar 6+6 conforme o roteiro. O custo dessa recarga especial na reserva de 21 não foi definido e precisa ser resolvido na implementação da economia; não substituir por retorno parcial.
+Trunfo executado por WeaponController e WeaponState. Nao pode ser comprado/equipado diretamente no treino. O tiro retorna a Lust & Greed com 6+6 sem debitar a reserva.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

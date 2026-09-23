@@ -41,12 +41,12 @@ Duas estruturas compactas de latão claro, punhos de madeira e tubos de conduç�
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Disparo duplo consome 2 balas e causa no máximo 72 em dois HS. Apenas uma carga e uma área elemental por acionamento. Reserva e recarga independem da animação.
 
 ## Estado da implementação
 
-WeaponController não divide munição em duas mãos nem lê RMB. Requer controle dual; os 40 tiros do asset são a soma de 20+20. Parâmetros de dano são por bala.
+WeaponState divide o pente em 20+20, alterna no LMB e consome as duas maos no RMB. O duplo tem dispersao multiplicada por 1,35 e uma unica ativacao arcana.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

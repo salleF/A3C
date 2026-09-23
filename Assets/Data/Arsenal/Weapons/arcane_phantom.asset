@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 1
   priceCR: 2900
   gameplaySummary: "Rifle automático silenciado para controle de ângulos. HS abaixo do teto de 160. Proposta: traçante invisível e menor penalidade de movimento, mantendo feedback de impacto."
-  implementationNotes: "Dano e cadência são lidos pelo controlador. silenced/visibleTracer ainda não são aplicados, e o projétil procedural continua visível."
+  implementationNotes: "WeaponController executa tiro e recarga; silenced reduz o som procedural. Arte e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/arcane_phantom.md"
   bodyDamage: 39
   headshotDamage: 156

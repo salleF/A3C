@@ -1,65 +1,89 @@
-using UnityEngine;
 using System;
+using UnityEngine;
+using A3C.Combat;
 
 namespace A3C.Objective
 {
     public class SleepingDragon : MonoBehaviour
     {
-        [Header("Mecanica do Dragao (O Spike)")]
-        public bool isPlanted = true;
-        public float corruptionPercent = 0f;
-        public float corruptionSpeed = 2.0f;
-        public float defuseRange = 4.0f;
-        public float defuseTimeRequired = 4.0f;
-
-        private float currentDefuseTime = 0f;
-        private bool isAwake = false;
-
+        public bool isPlanted;
+        public float corruptionPercent;
+        public float corruptionSpeed = 2f;
+        public float defuseRange = 4f;
+        public float defuseTimeRequired = 4f;
+        public float plantTimeRequired = 3f;
+        public Vector3[] plantSites = { new Vector3(-12, 0, 22), new Vector3(12, 0, 22) };
+        public CombatTeam Winner { get; private set; }
+        public float Progress { get; private set; }
+        public HealthSystem interactor;
+        private float interactionTime;
         public event Action<float> OnCorruptionUpdated;
         public event Action<float> OnDefuseProgressUpdated;
         public event Action OnDragonAwakened;
+        public event Action<CombatTeam> OnRoundEnded;
 
-        void Update()
+        void Update() => Tick(Time.deltaTime);
+        public void Tick(float deltaTime)
         {
-            if (isAwake || !isPlanted) return;
-
-            corruptionPercent += corruptionSpeed * Time.deltaTime;
-            corruptionPercent = Mathf.Clamp(corruptionPercent, 0f, 100f);
+            if (!isPlanted || Winner != CombatTeam.Neutral) return;
+            corruptionPercent = Mathf.Min(100f, corruptionPercent + corruptionSpeed * Mathf.Max(0f, deltaTime));
             OnCorruptionUpdated?.Invoke(corruptionPercent);
-
-            if (corruptionPercent >= 100f)
-            {
-                Debug.Log("Corrupcao atingiu 100%! Vitoria dos Atacantes!");
-            }
+            if (corruptionPercent >= 100f) Finish(CombatTeam.Attackers);
         }
-
-        public void ProcessDefuse(bool isHoldingKey, float deltaTime)
+        public void ResetForRound(bool planted = false)
         {
-            if (isAwake || !isPlanted) return;
-
-            if (isHoldingKey)
+            isPlanted = planted;
+            corruptionPercent = 0;
+            Winner = CombatTeam.Neutral;
+            interactionTime = Progress = 0;
+            if (planted) transform.position = plantSites[0] + Vector3.up * 0.6f;
+            SetVisual(planted);
+        }
+        public bool CanInteract(HealthSystem actor)
+        {
+            if (actor == null || !actor.IsAlive || Winner != CombatTeam.Neutral) return false;
+            if (isPlanted) return actor.team == CombatTeam.Defenders &&
+                Vector3.Distance(actor.transform.position, transform.position) <= defuseRange &&
+                CombatPhysics.Visible(transform.position + Vector3.up * 0.5f, actor);
+            if (actor.team != CombatTeam.Attackers) return false;
+            foreach (var site in plantSites) if (Vector3.Distance(site, actor.transform.position) <= defuseRange) return true;
+            return false;
+        }
+        public void Interact(HealthSystem actor, bool held, float seconds)
+        {
+            if (!held || !CanInteract(actor) || (interactor != null && interactor != actor))
             {
-                currentDefuseTime += deltaTime;
-                float progress = Mathf.Clamp01(currentDefuseTime / defuseTimeRequired);
-                OnDefuseProgressUpdated?.Invoke(progress);
-
-                if (currentDefuseTime >= defuseTimeRequired)
-                {
-                    WakeUpDragon();
-                }
+                interactionTime = Progress = 0;
+                interactor = null;
+                OnDefuseProgressUpdated?.Invoke(0f);
+                return;
             }
+            interactor = actor;
+            interactionTime += Mathf.Max(0f, seconds);
+            Progress = Mathf.Clamp01(interactionTime / (isPlanted ? defuseTimeRequired : plantTimeRequired));
+            OnDefuseProgressUpdated?.Invoke(Progress);
+            if (Progress < 1f) return;
+            if (isPlanted) { Finish(CombatTeam.Defenders); OnDragonAwakened?.Invoke(); }
             else
             {
-                currentDefuseTime = 0f;
-                OnDefuseProgressUpdated?.Invoke(0f);
+                isPlanted = true;
+                corruptionPercent = 0;
+                transform.position = actor.transform.position + actor.transform.forward + Vector3.up * 0.6f;
+                SetVisual(true);
+                interactionTime = Progress = 0;
+                interactor = null;
             }
         }
-
-        private void WakeUpDragon()
+        public void ProcessDefuse(bool isHoldingKey, float deltaTime) => Interact(interactor, isHoldingKey, deltaTime);
+        void Finish(CombatTeam team)
         {
-            isAwake = true;
-            OnDragonAwakened?.Invoke();
-            Debug.Log("DRAGAO ACORDOU! Defensores venceram a rodada de treino da A3C!");
+            if (Winner != CombatTeam.Neutral) return;
+            Winner = team;
+            OnRoundEnded?.Invoke(team);
+        }
+        void SetVisual(bool visible)
+        {
+            foreach (var renderer in GetComponentsInChildren<Renderer>()) renderer.enabled = visible;
         }
     }
 }

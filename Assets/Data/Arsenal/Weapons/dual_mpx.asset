@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 1
   priceCR: 1100
   gameplaySummary: "Par de SMGs, 20 tiros em cada mão. Proposta: LMB automático alterna mãos; RMB dispara uma de cada com maior dispersão. S.A.A. aplica um único efeito por disparo duplo, não um por arma."
-  implementationNotes: "WeaponController não divide munição em duas mãos nem lê RMB. Requer controle dual; os 40 tiros do asset são a soma de 20+20. Parâmetros de dano são por bala."
+  implementationNotes: "WeaponState divide o pente em 20+20, alterna no LMB e consome as duas maos no RMB. O duplo tem dispersao multiplicada por 1,35 e uma unica ativacao arcana."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/dual_mpx.md"
   bodyDamage: 18
   headshotDamage: 36

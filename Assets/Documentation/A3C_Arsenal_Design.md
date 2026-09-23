@@ -9,4 +9,4 @@ O design foi desdobrado em **21 fichas de armas e 25 fichas de cartuchos**, com 
 - [Roteiro original](../../Core_gameplay.txt)
 - [Asset central no Unity](../Data/Arsenal/ArsenalCatalog.asset)
 
-O Core_gameplay.txt prevalece nas regras de dano, munição, coletes, trunfo e categorias. Valores novos são propostas de playtest, identificadas nas fichas. Os assets desta entrega são dados; não representam implementação completa das mecânicas, modelos ou efeitos visuais.
+O Core_gameplay.txt prevalece nas regras de dano, munição, coletes, trunfo e categorias. Valores novos são propostas de playtest, identificadas nas fichas. A cena A3C_Training executa os assets em um treino local. Modelos, animações e efeitos visuais finais continuam pendentes.

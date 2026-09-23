@@ -41,12 +41,12 @@ Alavanca de latão sob o punho, coronha de madeira e anéis de choke com inscri�
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Dano máximo: 180 no corpo e 192 em HS, carregada ou não. Cancelar carga ao trocar, recarregar ou morrer sem gastar munição. Apenas um tiro ao soltar LMB.
 
 ## Estado da implementação
 
-O WeaponController atual dispara ao pressionar LMB. Requer implementação de carga/soltura e interpolação de spread para este asset.
+WeaponController concentra enquanto LMB esta pressionado e dispara ao soltar. O choke interpola a dispersao, sem alterar dano.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

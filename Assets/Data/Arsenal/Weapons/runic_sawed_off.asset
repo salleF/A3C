@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 3
   priceCR: 850
   gameplaySummary: "Escopeta curta de emboscada, com oito bagos por cartucho. LMB dispara uma carga. Não há modo duplo nesta proposta, preservando o teto de dano instantâneo."
-  implementationNotes: "O controlador existente emite pellets, mas ainda não executa cartuchos. Ausência de queda de dano no runtime limita o balanceamento por alcance."
+  implementationNotes: "WeaponController executa este asset com municao persistente por arma, cadencia, dispersao, alcance e recarga. A cena de treino permite selecionar o equipamento. Arte e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/runic_sawed_off.md"
   bodyDamage: 20
   headshotDamage: 24

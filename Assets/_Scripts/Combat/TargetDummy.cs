@@ -19,7 +19,8 @@ namespace A3C.Combat
         {
             if (headObject != null)
             {
-                headObject.tag = "Head";
+                var hitbox = headObject.GetComponent<Hitbox>() ?? headObject.AddComponent<Hitbox>();
+                hitbox.head = true;
                 headMat = headObject.GetComponent<Renderer>()?.material;
             }
             if (bodyObject != null)
@@ -62,11 +63,15 @@ namespace A3C.Combat
 
         private IEnumerator RespawnRoutine()
         {
-            gameObject.SetActive(false);
+            var renderers = GetComponentsInChildren<Renderer>();
+            var colliders = GetComponentsInChildren<Collider>();
+            foreach (var renderer in renderers) renderer.enabled = false;
+            foreach (var collider in colliders) collider.enabled = false;
             yield return new WaitForSeconds(2.5f);
             currentHealth = maxHealth;
             isDead = false;
-            gameObject.SetActive(true);
+            foreach (var renderer in renderers) renderer.enabled = true;
+            foreach (var collider in colliders) collider.enabled = true;
         }
     }
 }

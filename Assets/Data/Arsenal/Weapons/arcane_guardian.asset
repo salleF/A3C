@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 0
   priceCR: 2250
   gameplaySummary: "Rifle semiautomático de precisão. HS limitado a 160, corrigindo os 195 da tabela antiga. Cartuchos de rifle para bloquear visão e reconhecer ângulos."
-  implementationNotes: "WeaponController lê dano, cadência, pente, reserva e dispersão. Visual, alcance efetivo e regras especiais novos são dados de design; não há prefab exclusivo, áudio ou S.A.A. executável."
+  implementationNotes: "WeaponController executa este asset com municao persistente por arma, cadencia, dispersao, alcance e recarga. A cena de treino permite selecionar o equipamento. Arte e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/arcane_guardian.md"
   bodyDamage: 65
   headshotDamage: 160

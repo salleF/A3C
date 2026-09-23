@@ -41,12 +41,12 @@ Coronha maciça de madeira, cano longo com braçadeiras de latão e luneta de co
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Tórax em colete pesado cheio deixa exatamente 10 HP reais. HS elimina. O cartucho não converte tiro de corpo em hitkill nem multiplica o dano de cabeça.
 
 ## Estado da implementação
 
-O controlador lê os danos, mas não oferece scope nem ciclo de ferrolho. A exclusão de S.A.A. no documento antigo era um TODO e não consta no roteiro; o catálogo permite.
+WeaponController executa este asset com municao persistente por arma, cadencia, dispersao, alcance e recarga. A cena de treino permite selecionar o equipamento. Arte e audio finais permanecem pendentes.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

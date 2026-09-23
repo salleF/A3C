@@ -26,7 +26,7 @@ MonoBehaviour:
   activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
   counterplay: "Destruir o marco, observar por cima ou reposicionar após a leitura. Ele não continua rastreando alvos."
   visualDirection: "Monólito baixo com lente de cobre e runa triangular, inspirado nos marcos de reconhecimento da expedição a Crushle."
-  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  implementationNotes: "ArcaneSystem consome slots e cargas; ArcaneWorld executa os efeitos locais com times, alcance e oclusao. A cena de treino fornece controles e HUD. Quantidades sao propostas de playtest; VFX e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Spells/sniper_earth.md"
   effectColor: {r: 0.607843, g: 0.729412, b: 0.407843, a: 1}
   effects:
@@ -39,6 +39,8 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 0
     rules: "Pulso único antes de erguer a pedra, sem atravessar cobertura."
   - kind: 2
     target: 3
@@ -49,4 +51,6 @@ MonoBehaviour:
     barrierHealth: 80
     barrierWidth: 1.5
     barrierHeight: 1
+    barrierDepth: 0.35
+    persistentArea: 0
     rules: "Apoio de 0,35 m de profundidade; obedece às mesmas regras de colocação das demais barreiras."

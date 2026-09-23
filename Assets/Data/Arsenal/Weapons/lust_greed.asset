@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 0
   priceCR: 900
   gameplaySummary: "Lust: LMB. Greed: RMB. Cada mão guarda 6 balas; reserva inicial de 21. R recarrega somente a mão com menos munição (empate favorece Lust). Esvaziar as 12 sem recarga intermediária libera Punishment, mesmo errando os tiros. A recarga manual cancela a sequência. Usar cadência compartilhada, sem disparo duplo simultâneo."
-  implementationNotes: "Não existe controlador para munição independente ou sequência Punishment. magazineSize=12 é o total, magazinePerHand=6 descreve a divisão. O controlador genérico não reproduz o comportamento."
+  implementationNotes: "WeaponState conserva 6+6 e reserva de 21, controla cada mao e libera Punishment apos 12 tiros sem recarga. A recarga especial retorna 6+6 sem debitar reserva; a tecla R usa a reserva."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/lust_greed.md"
   bodyDamage: 34
   headshotDamage: 102

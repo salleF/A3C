@@ -26,7 +26,7 @@ MonoBehaviour:
   activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
   counterplay: "Romper linha de visão do ponto de impacto. A cura tem raio curto e não recompõe escudo ou revive eliminados."
   visualDirection: "Duas órbitas, branca ao redor de aliados e negra com contorno claro no ping. Silhuetas de times continuam distinguíveis."
-  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  implementationNotes: "ArcaneSystem consome slots e cargas; ArcaneWorld executa os efeitos locais com times, alcance e oclusao. A cena de treino fornece controles e HUD. Quantidades sao propostas de playtest; VFX e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Spells/sniper_light_dark.md"
   effectColor: {r: 0.862745, g: 0.827451, b: 0.960784, a: 1}
   effects:
@@ -39,6 +39,8 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 0
     rules: "Cura única de 20 HP reais até 100; somente aliados vivos com linha de visão do atirador, incluindo o usuário."
   - kind: 3
     target: 2
@@ -49,4 +51,6 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 0
     rules: "Ping de última posição no impacto. Nunca remove escudo adicional do alvo."

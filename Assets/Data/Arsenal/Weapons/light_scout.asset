@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 0
   priceCR: 2050
   gameplaySummary: "Sniper leve: 85 no tórax e 160 no HS, conforme roteiro. Mobilidade para reconhecimento e suporte. Proposta de RMB para mira óptica, sem dano adicional."
-  implementationNotes: "Dano e semiautomático usam o controlador atual. Zoom, animação de ferrolho e S.A.A. ainda precisam ser implementados."
+  implementationNotes: "WeaponController executa este asset com municao persistente por arma, cadencia, dispersao, alcance e recarga. A cena de treino permite selecionar o equipamento. Arte e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/light_scout.md"
   bodyDamage: 85
   headshotDamage: 160

@@ -41,12 +41,12 @@ Par compacto com três bocas triangulares por arma. Coronha curta em madeira gro
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 LMB consome 1 de uma mão; RMB, 1 de cada. Seis HS simultâneos somam 180, nunca 200. Com 1 carga de reserva e ambas vazias, a recarga distribui somente 1. Cadência compartilhada impede dois disparos no mesmo frame.
 
 ## Estado da implementação
 
-TriShotAkimbo é um controlador legado independente que não lê este asset. Seus danos, cadência e recarga precisam ser corrigidos e ligados a WeaponData. Não adicionar junto com WeaponController: ambos leem o mesmo mouse.
+WeaponController usa WeaponState com 2+2 cargas, tiro alternado ou duplo e recarga que conserva a reserva. TriShotAkimbo passou a ser adaptador sem leitura duplicada do mouse.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 1
   priceCR: 3500
   gameplaySummary: "Metralhadora de supressão. Proposta de 1 s para aquecer os canos antes de atirar e movimento a 30% enquanto equipada. Cartuchos mantêm zonas temporárias de Controle e Bloqueio."
-  implementationNotes: "WeaponController dispara imediatamente e PlayerMovement ignora equippedMoveMultiplier. Implementar aquecimento e penalidade de movimento; o asset não torna essas funções jogáveis."
+  implementationNotes: "WeaponController exige aquecimento continuo antes de disparar. Soltar o gatilho, trocar arma ou abrir o menu zera o aquecimento. PlayerMovement aplica o peso equipado."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/arcane_minigun.md"
   bodyDamage: 18
   headshotDamage: 28

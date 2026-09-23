@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 0
   priceCR: 0
   gameplaySummary: "Canhão mecânico temporário liberado por Lust & Greed. Uma única bala; 666 no HS. Não pode ser comprado, equipado livremente nem receber S.A.A. Disparar, acertando ou não, encerra o trunfo e retorna às pistolas recarregadas."
-  implementationNotes: "Requer estado especial no futuro controlador de Lust & Greed. O retorno deve restaurar 6+6 conforme o roteiro. O custo dessa recarga especial na reserva de 21 não foi definido e precisa ser resolvido na implementação da economia; não substituir por retorno parcial."
+  implementationNotes: "Trunfo executado por WeaponController e WeaponState. Nao pode ser comprado/equipado diretamente no treino. O tiro retorna a Lust & Greed com 6+6 sem debitar a reserva."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/punishment.md"
   bodyDamage: 150
   headshotDamage: 666

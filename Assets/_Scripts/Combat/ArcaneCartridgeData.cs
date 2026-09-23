@@ -25,6 +25,8 @@ namespace A3C.Combat
         [Min(0f)] public float barrierHealth;
         [Min(0f)] public float barrierWidth;
         [Min(0f)] public float barrierHeight;
+        [Min(0f)] public float barrierDepth;
+        public bool persistentArea;
         [TextArea(2, 5)] public string rules;
     }
 

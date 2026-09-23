@@ -167,10 +167,10 @@ def validate_cartridge(c, path):
     check(len(c["effects"]) > 0, f"{id}: no effects")
     for e in c["effects"]:
         check(set(e) == {"kind", "target", "anchor", "durationSeconds", "radiusMetres", "amount", "barrierHealth",
-                         "barrierWidth", "barrierHeight", "rules"}, f"{id}: incomplete effect definition")
+                         "barrierWidth", "barrierHeight", "barrierDepth", "persistentArea", "rules"}, f"{id}: incomplete effect definition")
         check(e["kind"] in range(8) and e["target"] in range(4) and e["anchor"] in range(2), f"{id}: invalid effect enum")
         check(all(isinstance(e[k], (int, float)) and math.isfinite(e[k]) and e[k] >= 0
-                  for k in ("durationSeconds", "radiusMetres", "amount", "barrierHealth", "barrierWidth", "barrierHeight")),
+                  for k in ("durationSeconds", "radiusMetres", "amount", "barrierHealth", "barrierWidth", "barrierHeight", "barrierDepth")),
               f"{id}: negative or invalid effect parameter")
         if e["kind"] == 5:
             check(c["category"] == 6 and e["target"] == 1 and 0 < e["amount"] <= 100, f"{id}: healing outside support contract")
@@ -179,7 +179,7 @@ def validate_cartridge(c, path):
         if e["kind"] in (1, 4, 6, 7):
             check(0 < e["amount"] < 1, f"{id}: status amount must be a fraction")
         if e["kind"] == 2:
-            check(e["target"] == 3 and min(e["barrierHealth"], e["barrierWidth"], e["barrierHeight"]) > 0,
+            check(e["target"] == 3 and min(e["barrierHealth"], e["barrierWidth"], e["barrierHeight"], e["barrierDepth"]) > 0,
                   f"{id}: invalid barrier")
         check(e["rules"], f"{id}: missing behavior rules")
     sheet = ROOT / c["designSheetPath"]

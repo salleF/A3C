@@ -41,12 +41,12 @@ Corpo bullpup de madeira escura e alça de latão com três marcas luminosas. O 
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Clique emite 3 tiros separados por 0,12 s. Com 2 balas, emite apenas 2. Troca, morte ou recarga cancela a sequência restante. Cada HS é 86; a rajada não é uma explosão simultânea.
 
 ## Estado da implementação
 
-burstCount já existia, mas não é consumido por WeaponController. Requer agenda de rajada e cancelamento. A redução de dano na terceira bala da proposta antiga foi retirada por não constar no roteiro.
+WeaponController executa a rajada em intervalos configurados, com consumo por bala e uma unica ativacao arcana. Troca, morte e recarga cancelam a sequencia.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

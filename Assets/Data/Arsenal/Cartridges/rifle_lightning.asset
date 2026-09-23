@@ -26,7 +26,7 @@ MonoBehaviour:
   activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
   counterplay: "Esperar os 4 s de cortina ou reposicionar após o pulso. Jogadores atrás de cobertura não são detectados."
   visualDirection: "Rede de filamentos dourados em névoa violeta tênue; borda sólida identifica o volume de visão bloqueada."
-  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  implementationNotes: "ArcaneSystem consome slots e cargas; ArcaneWorld executa os efeitos locais com times, alcance e oclusao. A cena de treino fornece controles e HUD. Quantidades sao propostas de playtest; VFX e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Spells/rifle_lightning.md"
   effectColor: {r: 0.933333, g: 0.858824, b: 0.396078, a: 1}
   effects:
@@ -39,6 +39,8 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 1
     rules: "Cortina opaca de ambos os lados."
   - kind: 3
     target: 2
@@ -49,4 +51,6 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 0
     rules: "Uma amostra de posição no impacto, sem rastreamento contínuo."

@@ -41,12 +41,12 @@ Pistolas irmãs com punhos de madeira, Lust em cobre rubro e Greed em latão ver
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Seis disparos de cada mão sem recarga, mesmo no ar, liberam o trunfo. Recarregar após o 11º impede a liberação. Dois cliques no mesmo frame respeitam uma única cadência, com prioridade LMB. Após Punishment, conferir retorno a 6+6 e documentar o custo escolhido para a recarga especial.
 
 ## Estado da implementação
 
-Não existe controlador para munição independente ou sequência Punishment. magazineSize=12 é o total, magazinePerHand=6 descreve a divisão. O controlador genérico não reproduz o comportamento.
+WeaponState conserva 6+6 e reserva de 21, controla cada mao e libera Punishment apos 12 tiros sem recarga. A recarga especial retorna 6+6 sem debitar reserva; a tecla R usa a reserva.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

@@ -26,7 +26,7 @@ MonoBehaviour:
   activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
   counterplay: "Ouvir o estalo de ignição e segurar a saída da nuvem. A fumaça também corta a visão do conjurador."
   visualDirection: "Cinzas em espiral baixa, selo circular de oficina e rastro âmbar apenas nos pés. Sem preencher a tela com chamas."
-  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  implementationNotes: "ArcaneSystem consome slots e cargas; ArcaneWorld executa os efeitos locais com times, alcance e oclusao. A cena de treino fornece controles e HUD. Quantidades sao propostas de playtest; VFX e audio finais permanecem pendentes."
   designSheetPath: "Assets/Documentation/Arsenal/Spells/smg_fire.md"
   effectColor: {r: 0.956863, g: 0.517647, b: 0.219608, a: 1}
   effects:
@@ -39,6 +39,8 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 0
     rules: "Multiplicador de velocidade 1 + amount. Não acumula com outro bônus elemental."
   - kind: 0
     target: 3
@@ -49,4 +51,6 @@ MonoBehaviour:
     barrierHealth: 0
     barrierWidth: 0
     barrierHeight: 0
+    barrierDepth: 0
+    persistentArea: 1
     rules: "Nuvem opaca para ambos os times, sem colisão e sem dano."

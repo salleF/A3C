@@ -41,12 +41,12 @@ Cabeça quadrada de forja com placas de latão e runas de ressonância. Punho gr
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Corpo de jogador recebe 60; barreira recebe 90. Não danificar paredes estáticas do mapa. Um alvo por golpe frontal e nenhuma colisão através da cobertura.
 
 ## Estado da implementação
 
-Requer controlador melee e interface de barreira destrutível. barrierDamageMultiplier não é lido pelo runtime atual.
+WeaponController executa golpe com oclusao e aplica barrierDamageMultiplier somente a ArcaneBarrier.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

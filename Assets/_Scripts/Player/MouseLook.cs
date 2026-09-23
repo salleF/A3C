@@ -8,11 +8,14 @@ namespace A3C.Player
         [Header("Sensibilidade da Mira")]
         public float mouseSensitivity = 0.15f;
         public Transform playerBody;
+        public bool captureOnStart = true;
+        public bool manageCursor = true;
 
         private float xRotation = 0f;
 
         void Start()
         {
+            if (!captureOnStart) return;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
@@ -20,7 +23,7 @@ namespace A3C.Player
         void Update()
         {
             // Toggle cursor lock com tecla ESC
-            if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+            if (manageCursor && Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
             {
                 if (Cursor.lockState == CursorLockMode.Locked)
                 {

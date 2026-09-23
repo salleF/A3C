@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 4
   priceCR: 400
   gameplaySummary: "Arma física. Golpe curto com LMB e bônus de 10% somente ao correr enquanto equipada. Não usa munição nem S.A.A. Trocar de arma remove o bônus."
-  implementationNotes: "FireMode.Melee é apenas definição. WeaponController ainda dispara projéteis para modos não automáticos. Requer detecção de golpe e integração com PlayerMovement antes de usar."
+  implementationNotes: "WeaponController executa golpes por alcance, arco e oclusao. PlayerMovement aplica sprintMultiplier apenas enquanto corre com a espada equipada."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/runic_sword.md"
   bodyDamage: 50
   headshotDamage: 120

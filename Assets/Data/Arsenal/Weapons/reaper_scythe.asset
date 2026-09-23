@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 4
   priceCR: 550
   gameplaySummary: "Golpe físico em arco horizontal de 120 graus. Pode atingir vários inimigos próximos, uma vez por alvo a cada golpe. Não atravessa cobertura e não usa S.A.A."
-  implementationNotes: "Requer controlador melee com deduplicação por HealthSystem e teste de oclusão. O modo genérico de projétil não executa sweep."
+  implementationNotes: "WeaponController executa sweep com deduplicacao por alvo e oclusao. Cada inimigo recebe no maximo um golpe por acionamento."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/reaper_scythe.md"
   bodyDamage: 45
   headshotDamage: 110

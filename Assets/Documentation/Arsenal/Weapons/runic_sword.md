@@ -41,12 +41,12 @@ Lâmina reta com canal rúnico tênue, guarda de latão e punho de madeira de va
 
 Usar madeira de varinha, latão e runas de contenção da A3C. Produzir vistas lateral, frontal e superior, vista em primeira pessoa e silhueta em terceira pessoa. Entregar pivôs de empunhadura, boca e peças móveis, materiais separados e escala em metros. Os modelos existentes são referências de protótipo, não modelos finais desta arma.
 
-## Critérios de aceitação no protótipo futuro
+## Critérios de aceitação
 
 Velocidade de caminhada não muda. Sprint recebe fator 1,10 e retorna ao valor anterior ao desequipar. Um golpe só registra uma vez por alvo, sem atravessar parede.
 
 ## Estado da implementação
 
-FireMode.Melee é apenas definição. WeaponController ainda dispara projéteis para modos não automáticos. Requer detecção de golpe e integração com PlayerMovement antes de usar.
+WeaponController executa golpes por alcance, arco e oclusao. PlayerMovement aplica sprintMultiplier apenas enquanto corre com a espada equipada.
 
-Esta entrega inclui a ficha e os parâmetros serializados. Não inclui modelo novo, animação, som, partículas ou mecânica jogável inédita. Ver [integração](../Unity_Integration.md).
+O runtime local consome estes parâmetros. A cena de treino usa silhuetas, efeitos e áudio procedurais; modelos e animações finais continuam pendentes. Ver [integração](../Unity_Integration.md).

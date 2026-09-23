@@ -19,7 +19,7 @@ MonoBehaviour:
   fireMode: 3
   priceCR: 800
   gameplaySummary: "Dois canos triplos serrados, com 2 cargas por mão (4 carregadas no total). LMB alterna mãos e solta 3 bagos; RMB consome uma carga de cada mão e solta 6. Se uma mão estiver vazia, RMB usa apenas a disponível. Recarga preserva a reserva. Não usa S.A.A."
-  implementationNotes: "TriShotAkimbo é um controlador legado independente que não lê este asset. Seus danos, cadência e recarga precisam ser corrigidos e ligados a WeaponData. Não adicionar junto com WeaponController: ambos leem o mesmo mouse."
+  implementationNotes: "WeaponController usa WeaponState com 2+2 cargas, tiro alternado ou duplo e recarga que conserva a reserva. TriShotAkimbo passou a ser adaptador sem leitura duplicada do mouse."
   designSheetPath: "Assets/Documentation/Arsenal/Weapons/trishot.md"
   bodyDamage: 22
   headshotDamage: 30

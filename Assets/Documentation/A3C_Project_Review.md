@@ -1,6 +1,6 @@
 # Revisão do projeto A3C
 
-Base inspecionada: `8686851ee9f54d3a92410c4d4d8d0f327cd4a487`, branch `main` de `salleF/A3C`. Análise estática do código, cenas serializadas, geometrias OBJ, importadores e documentação. Não houve execução do Unity ou renderização da cena.
+Base inspecionada: `8686851ee9f54d3a92410c4d4d8d0f327cd4a487`, branch `main` de `salleF/A3C`. Este relatório registra a revisão estática da base original; linhas e achados abaixo referem-se àquele commit. A implementação posterior adiciona a cena de treino e corrige os controladores de combate, coletes, recarga, projéteis e objetivo. Consulte o [guia de execução](Arsenal/Unity_Integration.md) e o `STATUS.json` da raiz para a validação atual. Arte, rotas e modelos do mapa original continuam pendentes.
 
 O foco desta entrega é continuar fichas e assets configuráveis. Os problemas abaixo foram confirmados no código de origem e ficam como próximos trabalhos de runtime. Nenhuma dessas correções foi aplicada silenciosamente à cena, ao combate ou aos modelos.
 

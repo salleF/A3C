@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using A3C.Combat;
 
 namespace A3C.Player
 {
@@ -28,6 +29,9 @@ namespace A3C.Player
 
         void Update()
         {
+            if (!controller.enabled) return;
+            var health = GetComponent<HealthSystem>();
+            if ((health != null && !health.IsAlive) || Cursor.lockState != CursorLockMode.Locked) return;
             if (groundCheck != null)
             {
                 isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -62,6 +66,10 @@ namespace A3C.Player
             move.Normalize();
 
             float currentSpeed = sprintPressed ? sprintSpeed : walkSpeed;
+            var weapon = GetComponent<WeaponController>()?.currentWeapon;
+            if (weapon != null) currentSpeed *= weapon.equippedMoveMultiplier * (sprintPressed ? weapon.sprintMultiplier : 1f);
+            var status = GetComponent<CombatStatus>();
+            if (status != null) currentSpeed *= status.MovementMultiplier;
             controller.Move(move * currentSpeed * Time.deltaTime);
 
             if (jumpPressed && isGrounded)

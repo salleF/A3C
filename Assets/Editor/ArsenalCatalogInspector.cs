@@ -10,8 +10,8 @@ namespace A3C.Editor
         public override void OnInspectorGUI()
         {
             EditorGUILayout.HelpBox(
-                "Asset de dados. Os parametros de design nao implementam as mecanicas. " +
-                "Consulte Implementation Notes e a ficha antes de equipar no prototipo.", MessageType.Info);
+                "Configuracao consumida pelo WeaponController. Use a cena A3C_Training para testar. " +
+                "Numeros de balanceamento continuam sujeitos a playtest.", MessageType.Info);
             DrawDefaultInspector();
             var weapon = (WeaponData)target;
             EditorGUILayout.LabelField("Aceita S.A.A.", weapon.SupportsArcaneCartridges ? "Sim" : "Nao");
@@ -24,7 +24,7 @@ namespace A3C.Editor
         public override void OnInspectorGUI()
         {
             EditorGUILayout.HelpBox(
-                "Especificacao configuravel. O prototipo ainda nao executa cartuchos ou efeitos. " +
+                "Configuracao consumida pelo ArcaneSystem. Q/E/C arma o proximo disparo. " +
                 "Custos e duracoes sao propostas para playtest.", MessageType.Info);
             DrawDefaultInspector();
         }
