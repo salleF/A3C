@@ -1,0 +1,65 @@
+3. Core Gameplay: O Dragão Adormecido (O "Spike")
+Modo: Ataque vs. Defesa (5v5).
+Os Atacantes: Devem transportar o Dragão Adormecido até um dos Bombsites e colocá-lo para dormir.
+Mecânica da Corrupção: Ao adormecer no solo rúnico, o dragão entra em um sonho mágico que projeta um vórtice de corrupção visual e física no mapa (de 0% a 100%). Se atingir 100%, os atacantes vencem a rodada.
+Os Defensores: Devem impedir a chegada ao bombsite ou Acordar o Dragão (interação sustentada segurando tecla E por 4 segundos) para desativar o "Spike" e vencer.
+4. Filosofia de Combate, Vida & Hitkills
+Vida Base: 100 HP.
+Vida Máxima (com Colete Pesado): 200 HP.
+Teto de Dano dos Rifles no Headshot: 160 de Dano.
+Nenhum rifle mata com 1 tiro quem estiver de Colete Máximo (o alvo sobrevive com 40 HP).
+Sniper Pesada (AWP):
+Tórax: 190 de Dano (deixa quem estiver de Colete Cheio com exatamente 10 HP, gerando tensão de clutch).
+Headshot: 350+ Dano (Hitkill imediato).
+Sniper Leve (Scout): 85 no Tórax / 160 no Headshot.
+A Regra de Ouro dos Hitkills (1-Tap 100 a 0):
+No jogo inteiro, apenas 2 situações matam instantaneamente alguém de 200 HP:
+Headshot de Sniper Pesada.
+Headshot da Punishment (666 de dano).
+5. O Sistema dos 4 Coletes
+Regra Fundamental: Vida Real (100 HP) e Escudo NUNCA se misturam. Kills e regenerações recuperam exclusivamente a blindagem de escudo, enquanto a vida real só é curada por feitiços de suporte.
+
+Colete	Escudo Inicial	Mecânica Especial	Preço	Perfil de Jogo
+1. Colete Leve	+50 HP	Proteção básica estática (total 150 HP).	400 CR	Rounds econômicos / forçados.
+2. Colete Energético	+50 HP	Regenera até o teto de 50 após 6s sem tomar dano.	750 CR	Snipers, lurkers e jogadores de suporte.
+3. Colete Pesado	+100 HP	100 HP imediatos (início em 200 HP totais).	1.000 CR	Tanque imediato para segurar bombsites.
+4. Colete Construtivo	0 HP	Inicia zerado todo round. Ganha +20 HP de escudo a cada abate!	650 CR	Duelistas, entry fraggers e mira afiada.
+6. Catálogo do Arsenal
+Iniciais (Round 1 / Eco)
+A3C (Defensores): Pistola Magitech (Classic) — Disparo tático semiautomático magitech.
+Rebeldes (Atacantes): Varinha Rústica — Disparos arcanos por estalar de dedos.
+Simetria Absoluta: Ambas têm rigorosamente o mesmo dano e cadência, diferenciando apenas o visual e os efeitos sonoros.
+Secundárias / Pistolas (100% Mecânicas e Autossuficientes)
+As pistolas NÃO usam cartuchos de magia, possuindo truques mecânicos próprios:
+
+Ghost: Silenciada, sem traçantes.
+TriShot Arcano (Mozambique Akimbo): Duas armas de mão com cano triplo serrado; 2 balas em cada lado (4/4). LMB dispara alternado (3 bagos) e RMB dispara ambas juntas simultaneamente (6 bagos).
+Lust & Greed (Dual Pistols): 6 balas em cada arma (12 no total) e 21 de reserva. LMB atira a Lust, RMB atira a Greed. Tecla R recarrega a que tiver menos balas.
+O Trunfo — Punishment: Se esvaziar todas as 12 balas sem recarregar no meio, saca um canhão pesado com apenas 1 bala no tambor. Causa 666 de Dano no Headshot (Hitkill)! Ao atirar, volta para a Lust & Greed recarregadas.
+Armas Melee (Utilitários Físicos)
+Espada Rúnica: Bônus de velocidade de movimento ao correr.
+Foice de Ceifador: Ataque em arco amplo (sweep).
+Martelo de Forja: Dano bônus contra barreiras de bloqueio e paredes mágicas.
+Primárias (SMGs, Shotguns, Rifles, Snipers, Machine Gun)
+SMGs: P90 Rúnica, Thompson Arcana, Dual Hand Sig MPX.
+Shotguns: Sawed-Off Rúnica, Lever-Action com Choke (Peacekeeper).
+Rifles: Famas (Rajada), Vandal/AK (160 HS), M4/Phantom (Silenciado), Guardian (Semiautomático).
+Snipers: Scout Leve (160 HS), AWP Pesada (190 Peito / 350+ HS).
+Pesada: Minigun a Vapor Arcana.
+7. O S.A.A. (Sistema de Arsenal Arcano)
+Exclusivo para as Armas Primárias. O jogador equipa até 3 Cartuchos Elementais (teclas Q, E, C) comprados na loja:
+
+Os 5 Elementos:
+
+?? Fogo
+?? Água
+?? Terra
+? Relâmpago
+?? Luz & Escuridão (operam juntos como um único elemento dual)
+As 5 Classificações de Design por Tipo de Arma:
+
+SMGs: Habilidades focadas em ? Avanço e ?? Controle (rush, mobilidade e stuns).
+Shotguns: Habilidades focadas em ?? Controle e ??? Bloqueio (emboscadas e forçar combate colado).
+Rifles: Habilidades focadas em ??? Bloqueio e ??? Observação (controle de visão, smokes e radares).
+Snipers: Habilidades focadas em ??? Observação e ?? Suporte (reconhecimento e buffs recuados).
+Machine Gun: Habilidades focadas em ?? Controle e ??? Bloqueio (supressão contínua e negação de área)."

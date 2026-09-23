@@ -1,0 +1,1 @@
+Leia os arquivos da pasta A3C veja o E:\A3C\Assets\Documentation\A3C_Lore_Crushle.md para ver a historia a tematica e o que seguir no projeto, veja o codigo e o projeto do mapa + modelos confira o que da para melhorar e depois continue fazendo arquivos para todas as armas e magias do jogo seguindo o roteiro em Core_gameplay.txt 
