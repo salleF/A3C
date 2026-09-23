@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc48708455150d9a37d231b024e1c0f, type: 3}
+  m_Name: shotgun_earth
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.ArcaneCartridgeData
+  cartridgeId: "shotgun_earth"
+  cartridgeName: "Mureta de Cerco"
+  category: 4
+  element: 2
+  primaryRole: 1
+  secondaryRole: 2
+  priceCR: 350
+  chargesPerPurchase: 3
+  cooldownSeconds: 1
+  castRangeMetres: 15
+  gameplaySummary: "Uma única mureta aparece no primeiro impacto válido do disparo, mesmo que seis ou oito bagos acertem. Fecha a parte baixa de uma passagem."
+  activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
+  counterplay: "Destruir, mirar por cima ou contornar. Martelo recebe seu bônus de barreira; cobertura não protege dos ângulos laterais."
+  visualDirection: "Blocos de calcário de Crushle com juntas rúnicas verdes e rachaduras que revelam a vida restante."
+  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  designSheetPath: "Assets/Documentation/Arsenal/Spells/shotgun_earth.md"
+  effectColor: {r: 0.607843, g: 0.729412, b: 0.407843, a: 1}
+  effects:
+  - kind: 2
+    target: 3
+    anchor: 1
+    durationSeconds: 4
+    radiusMetres: 0
+    amount: 0
+    barrierHealth: 140
+    barrierWidth: 3
+    barrierHeight: 1.2
+    rules: "Mureta de 0,4 m de profundidade. Rejeitar colocação que intercepte jogador ou Dragão."

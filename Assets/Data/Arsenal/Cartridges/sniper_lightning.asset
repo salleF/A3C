@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc48708455150d9a37d231b024e1c0f, type: 3}
+  m_Name: sniper_lightning
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.ArcaneCartridgeData
+  cartridgeId: "sniper_lightning"
+  cartridgeName: "Telêmetro Galvânico"
+  category: 6
+  element: 3
+  primaryRole: 3
+  secondaryRole: 4
+  priceCR: 350
+  chargesPerPurchase: 3
+  cooldownSeconds: 1
+  castRangeMetres: 90
+  gameplaySummary: "Um pulso de medição registra posições no impacto; a descarga de retorno acelera brevemente o atirador para sair da linha exposta."
+  activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
+  counterplay: "Reposicionar após o ping e punir o intervalo entre tiros. Não revela através de paredes nem teleporta projéteis."
+  visualDirection: "Marca de distância amarela e aro violeta no punho do atirador, com estalo único de capacitor."
+  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  designSheetPath: "Assets/Documentation/Arsenal/Spells/sniper_lightning.md"
+  effectColor: {r: 0.933333, g: 0.858824, b: 0.396078, a: 1}
+  effects:
+  - kind: 3
+    target: 2
+    anchor: 1
+    durationSeconds: 2
+    radiusMetres: 5
+    amount: 0
+    barrierHealth: 0
+    barrierWidth: 0
+    barrierHeight: 0
+    rules: "Última posição vista, registrada uma vez."
+  - kind: 4
+    target: 0
+    anchor: 0
+    durationSeconds: 1.5
+    radiusMetres: 0
+    amount: 0.15
+    barrierHealth: 0
+    barrierWidth: 0
+    barrierHeight: 0
+    rules: "Bônus de 15% não aumenta a precisão em movimento nem remove a penalidade própria da arma."

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436ad53036f41eb4ea244f53cb32c714, type: 3}
+  m_Name: dual_mpx
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.WeaponData
+  weaponId: "dual_mpx"
+  weaponName: "Dual Hand Sig MPX"
+  category: 3
+  mechanic: 1
+  fireMode: 1
+  priceCR: 1100
+  gameplaySummary: "Par de SMGs, 20 tiros em cada mão. Proposta: LMB automático alterna mãos; RMB dispara uma de cada com maior dispersão. S.A.A. aplica um único efeito por disparo duplo, não um por arma."
+  implementationNotes: "WeaponController não divide munição em duas mãos nem lê RMB. Requer controle dual; os 40 tiros do asset são a soma de 20+20. Parâmetros de dano são por bala."
+  designSheetPath: "Assets/Documentation/Arsenal/Weapons/dual_mpx.md"
+  bodyDamage: 18
+  headshotDamage: 36
+  fireRateRPM: 600
+  pelletsPerShot: 1
+  burstCount: 1
+  baseSpread: 0.012
+  spreadIncreasePerShot: 0.01
+  maxSpread: 0.13
+  spreadRecoverySpeed: 0.15
+  movementSpreadMultiplier: 2.5
+  magazineSize: 40
+  maxReserveAmmo: 80
+  reloadTime: 2.6
+  projectileSpeed: 120
+  magazinePerHand: 20
+  maxSimultaneousShots: 2
+  silenced: 0
+  visibleTracer: 1
+  effectiveRange: 25
+  burstInterval: 0.12
+  chokeChargeTime: 0
+  chargedSpreadMultiplier: 1
+  spinUpTime: 0
+  equippedMoveMultiplier: 1
+  sprintMultiplier: 1
+  meleeRange: 0
+  meleeArcDegrees: 0
+  barrierDamageMultiplier: 1
+  shotsToUnlockSpecial: 0
+  projectilePrefab: {fileID: 0}
+  muzzleFlashColor: {r: 0.219608, g: 0.800000, b: 0.909804, a: 1}
+  specialWeapon: {fileID: 0}

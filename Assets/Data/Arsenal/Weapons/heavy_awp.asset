@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436ad53036f41eb4ea244f53cb32c714, type: 3}
+  m_Name: heavy_awp
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.WeaponData
+  weaponId: "heavy_awp"
+  weaponName: "AWP Pesada"
+  category: 6
+  mechanic: 0
+  fireMode: 0
+  priceCR: 4700
+  gameplaySummary: "Sniper pesada: 190 no tórax, 350 no HS. Uma das duas exceções de hitkill em 200 HP. Como arma primária, participa do S.A.A. de Observação e Suporte, sem dano extra."
+  implementationNotes: "O controlador lê os danos, mas não oferece scope nem ciclo de ferrolho. A exclusão de S.A.A. no documento antigo era um TODO e não consta no roteiro; o catálogo permite."
+  designSheetPath: "Assets/Documentation/Arsenal/Weapons/heavy_awp.md"
+  bodyDamage: 190
+  headshotDamage: 350
+  fireRateRPM: 40
+  pelletsPerShot: 1
+  burstCount: 1
+  baseSpread: 0.001
+  spreadIncreasePerShot: 0.01
+  maxSpread: 0.04
+  spreadRecoverySpeed: 0.15
+  movementSpreadMultiplier: 2.5
+  magazineSize: 5
+  maxReserveAmmo: 15
+  reloadTime: 3.2
+  projectileSpeed: 120
+  magazinePerHand: 0
+  maxSimultaneousShots: 1
+  silenced: 0
+  visibleTracer: 1
+  effectiveRange: 120
+  burstInterval: 0.12
+  chokeChargeTime: 0
+  chargedSpreadMultiplier: 1
+  spinUpTime: 0
+  equippedMoveMultiplier: 0.85
+  sprintMultiplier: 1
+  meleeRange: 0
+  meleeArcDegrees: 0
+  barrierDamageMultiplier: 1
+  shotsToUnlockSpecial: 0
+  projectilePrefab: {fileID: 0}
+  muzzleFlashColor: {r: 0.219608, g: 0.800000, b: 0.909804, a: 1}
+  specialWeapon: {fileID: 0}

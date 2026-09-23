@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436ad53036f41eb4ea244f53cb32c714, type: 3}
+  m_Name: punishment
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.WeaponData
+  weaponId: "punishment"
+  weaponName: "Punishment"
+  category: 8
+  mechanic: 3
+  fireMode: 0
+  priceCR: 0
+  gameplaySummary: "Canhão mecânico temporário liberado por Lust & Greed. Uma única bala; 666 no HS. Não pode ser comprado, equipado livremente nem receber S.A.A. Disparar, acertando ou não, encerra o trunfo e retorna às pistolas recarregadas."
+  implementationNotes: "Requer estado especial no futuro controlador de Lust & Greed. O retorno deve restaurar 6+6 conforme o roteiro. O custo dessa recarga especial na reserva de 21 não foi definido e precisa ser resolvido na implementação da economia; não substituir por retorno parcial."
+  designSheetPath: "Assets/Documentation/Arsenal/Weapons/punishment.md"
+  bodyDamage: 150
+  headshotDamage: 666
+  fireRateRPM: 40
+  pelletsPerShot: 1
+  burstCount: 1
+  baseSpread: 0.005
+  spreadIncreasePerShot: 0.01
+  maxSpread: 0.08
+  spreadRecoverySpeed: 0.15
+  movementSpreadMultiplier: 2.5
+  magazineSize: 1
+  maxReserveAmmo: 0
+  reloadTime: 0
+  projectileSpeed: 120
+  magazinePerHand: 0
+  maxSimultaneousShots: 1
+  silenced: 0
+  visibleTracer: 1
+  effectiveRange: 45
+  burstInterval: 0.12
+  chokeChargeTime: 0
+  chargedSpreadMultiplier: 1
+  spinUpTime: 0
+  equippedMoveMultiplier: 1
+  sprintMultiplier: 1
+  meleeRange: 0
+  meleeArcDegrees: 0
+  barrierDamageMultiplier: 1
+  shotsToUnlockSpecial: 0
+  projectilePrefab: {fileID: 0}
+  muzzleFlashColor: {r: 0.219608, g: 0.800000, b: 0.909804, a: 1}
+  specialWeapon: {fileID: 0}

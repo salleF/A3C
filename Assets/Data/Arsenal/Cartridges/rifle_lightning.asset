@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc48708455150d9a37d231b024e1c0f, type: 3}
+  m_Name: rifle_lightning
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.ArcaneCartridgeData
+  cartridgeId: "rifle_lightning"
+  cartridgeName: "Cortina de Íons"
+  category: 5
+  element: 3
+  primaryRole: 2
+  secondaryRole: 3
+  priceCR: 350
+  chargesPerPurchase: 3
+  cooldownSeconds: 1
+  castRangeMetres: 45
+  gameplaySummary: "Partículas ionizadas criam bloqueio visual curto, acompanhado de uma leitura inicial de assinaturas próximas. Sem ricochete ou dano adicional."
+  activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
+  counterplay: "Esperar os 4 s de cortina ou reposicionar após o pulso. Jogadores atrás de cobertura não são detectados."
+  visualDirection: "Rede de filamentos dourados em névoa violeta tênue; borda sólida identifica o volume de visão bloqueada."
+  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  designSheetPath: "Assets/Documentation/Arsenal/Spells/rifle_lightning.md"
+  effectColor: {r: 0.933333, g: 0.858824, b: 0.396078, a: 1}
+  effects:
+  - kind: 0
+    target: 3
+    anchor: 1
+    durationSeconds: 4
+    radiusMetres: 2.5
+    amount: 0
+    barrierHealth: 0
+    barrierWidth: 0
+    barrierHeight: 0
+    rules: "Cortina opaca de ambos os lados."
+  - kind: 3
+    target: 2
+    anchor: 1
+    durationSeconds: 1.2
+    radiusMetres: 3
+    amount: 0
+    barrierHealth: 0
+    barrierWidth: 0
+    barrierHeight: 0
+    rules: "Uma amostra de posição no impacto, sem rastreamento contínuo."

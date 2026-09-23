@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436ad53036f41eb4ea244f53cb32c714, type: 3}
+  m_Name: lust_greed
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.WeaponData
+  weaponId: "lust_greed"
+  weaponName: "Lust & Greed"
+  category: 1
+  mechanic: 2
+  fireMode: 0
+  priceCR: 900
+  gameplaySummary: "Lust: LMB. Greed: RMB. Cada mão guarda 6 balas; reserva inicial de 21. R recarrega somente a mão com menos munição (empate favorece Lust). Esvaziar as 12 sem recarga intermediária libera Punishment, mesmo errando os tiros. A recarga manual cancela a sequência. Usar cadência compartilhada, sem disparo duplo simultâneo."
+  implementationNotes: "Não existe controlador para munição independente ou sequência Punishment. magazineSize=12 é o total, magazinePerHand=6 descreve a divisão. O controlador genérico não reproduz o comportamento."
+  designSheetPath: "Assets/Documentation/Arsenal/Weapons/lust_greed.md"
+  bodyDamage: 34
+  headshotDamage: 102
+  fireRateRPM: 120
+  pelletsPerShot: 1
+  burstCount: 1
+  baseSpread: 0.005
+  spreadIncreasePerShot: 0.01
+  maxSpread: 0.08
+  spreadRecoverySpeed: 0.15
+  movementSpreadMultiplier: 2.5
+  magazineSize: 12
+  maxReserveAmmo: 21
+  reloadTime: 1.8
+  projectileSpeed: 120
+  magazinePerHand: 6
+  maxSimultaneousShots: 1
+  silenced: 0
+  visibleTracer: 1
+  effectiveRange: 50
+  burstInterval: 0.12
+  chokeChargeTime: 0
+  chargedSpreadMultiplier: 1
+  spinUpTime: 0
+  equippedMoveMultiplier: 1
+  sprintMultiplier: 1
+  meleeRange: 0
+  meleeArcDegrees: 0
+  barrierDamageMultiplier: 1
+  shotsToUnlockSpecial: 12
+  projectilePrefab: {fileID: 0}
+  muzzleFlashColor: {r: 0.219608, g: 0.800000, b: 0.909804, a: 1}
+  specialWeapon: {fileID: 11400000, guid: 249e4bef18a65b94aca93b9c12d3d616, type: 2}

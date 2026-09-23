@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc48708455150d9a37d231b024e1c0f, type: 3}
+  m_Name: smg_fire
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.ArcaneCartridgeData
+  cartridgeId: "smg_fire"
+  cartridgeName: "Passo de Brasa"
+  category: 3
+  element: 0
+  primaryRole: 0
+  secondaryRole: 1
+  priceCR: 200
+  chargesPerPurchase: 3
+  cooldownSeconds: 1
+  castRangeMetres: 30
+  gameplaySummary: "Pulso térmico acelera o usuário por 2 s e deixa no ponto de impacto uma nuvem curta, permitindo cruzar uma porta de Crushle. Não causa queimadura."
+  activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
+  counterplay: "Ouvir o estalo de ignição e segurar a saída da nuvem. A fumaça também corta a visão do conjurador."
+  visualDirection: "Cinzas em espiral baixa, selo circular de oficina e rastro âmbar apenas nos pés. Sem preencher a tela com chamas."
+  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  designSheetPath: "Assets/Documentation/Arsenal/Spells/smg_fire.md"
+  effectColor: {r: 0.956863, g: 0.517647, b: 0.219608, a: 1}
+  effects:
+  - kind: 4
+    target: 0
+    anchor: 0
+    durationSeconds: 2
+    radiusMetres: 0
+    amount: 0.1
+    barrierHealth: 0
+    barrierWidth: 0
+    barrierHeight: 0
+    rules: "Multiplicador de velocidade 1 + amount. Não acumula com outro bônus elemental."
+  - kind: 0
+    target: 3
+    anchor: 1
+    durationSeconds: 2
+    radiusMetres: 1.5
+    amount: 0
+    barrierHealth: 0
+    barrierWidth: 0
+    barrierHeight: 0
+    rules: "Nuvem opaca para ambos os times, sem colisão e sem dano."

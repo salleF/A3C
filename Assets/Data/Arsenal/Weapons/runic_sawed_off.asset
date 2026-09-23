@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436ad53036f41eb4ea244f53cb32c714, type: 3}
+  m_Name: runic_sawed_off
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.WeaponData
+  weaponId: "runic_sawed_off"
+  weaponName: "Sawed-Off Rúnica"
+  category: 4
+  mechanic: 0
+  fireMode: 3
+  priceCR: 850
+  gameplaySummary: "Escopeta curta de emboscada, com oito bagos por cartucho. LMB dispara uma carga. Não há modo duplo nesta proposta, preservando o teto de dano instantâneo."
+  implementationNotes: "O controlador existente emite pellets, mas ainda não executa cartuchos. Ausência de queda de dano no runtime limita o balanceamento por alcance."
+  designSheetPath: "Assets/Documentation/Arsenal/Weapons/runic_sawed_off.md"
+  bodyDamage: 20
+  headshotDamage: 24
+  fireRateRPM: 200
+  pelletsPerShot: 8
+  burstCount: 1
+  baseSpread: 0.06
+  spreadIncreasePerShot: 0.01
+  maxSpread: 0.12
+  spreadRecoverySpeed: 0.15
+  movementSpreadMultiplier: 2.5
+  magazineSize: 5
+  maxReserveAmmo: 10
+  reloadTime: 2.5
+  projectileSpeed: 120
+  magazinePerHand: 0
+  maxSimultaneousShots: 1
+  silenced: 0
+  visibleTracer: 1
+  effectiveRange: 12
+  burstInterval: 0.12
+  chokeChargeTime: 0
+  chargedSpreadMultiplier: 1
+  spinUpTime: 0
+  equippedMoveMultiplier: 1
+  sprintMultiplier: 1
+  meleeRange: 0
+  meleeArcDegrees: 0
+  barrierDamageMultiplier: 1
+  shotsToUnlockSpecial: 0
+  projectilePrefab: {fileID: 0}
+  muzzleFlashColor: {r: 0.219608, g: 0.800000, b: 0.909804, a: 1}
+  specialWeapon: {fileID: 0}

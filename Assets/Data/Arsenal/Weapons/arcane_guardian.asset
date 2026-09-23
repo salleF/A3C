@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436ad53036f41eb4ea244f53cb32c714, type: 3}
+  m_Name: arcane_guardian
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.WeaponData
+  weaponId: "arcane_guardian"
+  weaponName: "Guardian Arcano"
+  category: 5
+  mechanic: 0
+  fireMode: 0
+  priceCR: 2250
+  gameplaySummary: "Rifle semiautomático de precisão. HS limitado a 160, corrigindo os 195 da tabela antiga. Cartuchos de rifle para bloquear visão e reconhecer ângulos."
+  implementationNotes: "WeaponController lê dano, cadência, pente, reserva e dispersão. Visual, alcance efetivo e regras especiais novos são dados de design; não há prefab exclusivo, áudio ou S.A.A. executável."
+  designSheetPath: "Assets/Documentation/Arsenal/Weapons/arcane_guardian.md"
+  bodyDamage: 65
+  headshotDamage: 160
+  fireRateRPM: 195
+  pelletsPerShot: 1
+  burstCount: 1
+  baseSpread: 0.002
+  spreadIncreasePerShot: 0.01
+  maxSpread: 0.05
+  spreadRecoverySpeed: 0.15
+  movementSpreadMultiplier: 2.5
+  magazineSize: 12
+  maxReserveAmmo: 36
+  reloadTime: 2.3
+  projectileSpeed: 120
+  magazinePerHand: 0
+  maxSimultaneousShots: 1
+  silenced: 0
+  visibleTracer: 1
+  effectiveRange: 70
+  burstInterval: 0.12
+  chokeChargeTime: 0
+  chargedSpreadMultiplier: 1
+  spinUpTime: 0
+  equippedMoveMultiplier: 1
+  sprintMultiplier: 1
+  meleeRange: 0
+  meleeArcDegrees: 0
+  barrierDamageMultiplier: 1
+  shotsToUnlockSpecial: 0
+  projectilePrefab: {fileID: 0}
+  muzzleFlashColor: {r: 0.219608, g: 0.800000, b: 0.909804, a: 1}
+  specialWeapon: {fileID: 0}

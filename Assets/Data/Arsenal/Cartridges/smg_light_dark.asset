@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc48708455150d9a37d231b024e1c0f, type: 3}
+  m_Name: smg_light_dark
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.ArcaneCartridgeData
+  cartridgeId: "smg_light_dark"
+  cartridgeName: "Passagem do Eclipse"
+  category: 3
+  element: 4
+  primaryRole: 0
+  secondaryRole: 1
+  priceCR: 600
+  chargesPerPurchase: 3
+  cooldownSeconds: 1
+  castRangeMetres: 30
+  gameplaySummary: "Uma única ativação combina Luz, que acelera o usuário, e Escuridão, que reduz brevemente a visão dos inimigos expostos no impacto. Não cura, pois esta família é de avanço e controle."
+  activationRules: "Q/E/C arma o slot; o próximo disparo válido consome 1 carga e desarma o slot. Rajada, tiro duplo e pellets contam como um acionamento. Efeitos de impacto são criados uma vez no primeiro impacto válido dentro do alcance; efeitos no usuário ocorrem no disparo. Errar ou exceder alcance gasta a carga. Trocar arma, morrer ou recarregar cancela o preparo sem gasto. E perto do Dragão prioriza a interação de despertar e não arma cartucho."
+  counterplay: "Virar o rosto ou usar cobertura quebra a exposição ao ofuscamento. O som de duas notas avisa a ativação."
+  visualDirection: "Anéis branco e negro entrelaçados, runa bipartida e contraste de forma além da cor."
+  implementationNotes: "Dados e ficha de design. Não há SAASystem nem executor de efeitos no protótipo; este asset não altera projéteis, movimento, HUD ou vida automaticamente. Quantidades são propostas de playtest."
+  designSheetPath: "Assets/Documentation/Arsenal/Spells/smg_light_dark.md"
+  effectColor: {r: 0.862745, g: 0.827451, b: 0.960784, a: 1}
+  effects:
+  - kind: 4
+    target: 0
+    anchor: 0
+    durationSeconds: 1.5
+    radiusMetres: 0
+    amount: 0.1
+    barrierHealth: 0
+    barrierWidth: 0
+    barrierHeight: 0
+    rules: "A metade de Luz acelera 10%; não empilha bônus."
+  - kind: 6
+    target: 2
+    anchor: 1
+    durationSeconds: 0.4
+    radiusMetres: 2
+    amount: 0.4
+    barrierHealth: 0
+    barrierWidth: 0
+    barrierHeight: 0
+    rules: "A metade de Escuridão ofusca até 40%, somente com linha de visão e alvo olhando o impacto."

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436ad53036f41eb4ea244f53cb32c714, type: 3}
+  m_Name: lever_action
+  m_EditorClassIdentifier: Assembly-CSharp::A3C.Combat.WeaponData
+  weaponId: "lever_action"
+  weaponName: "Lever-Action Arcana (Choke)"
+  category: 4
+  mechanic: 7
+  fireMode: 3
+  priceCR: 1050
+  gameplaySummary: "Escopeta de alavanca com seis bagos. Segurar LMB concentra por até 0,8 s; soltar dispara. Choke reduz dispersão até 35% do valor original e não aumenta dano. Soltar cedo ainda dispara com a concentração parcial."
+  implementationNotes: "O WeaponController atual dispara ao pressionar LMB. Requer implementação de carga/soltura e interpolação de spread para este asset."
+  designSheetPath: "Assets/Documentation/Arsenal/Weapons/lever_action.md"
+  bodyDamage: 30
+  headshotDamage: 32
+  fireRateRPM: 140
+  pelletsPerShot: 6
+  burstCount: 1
+  baseSpread: 0.045
+  spreadIncreasePerShot: 0.01
+  maxSpread: 0.1
+  spreadRecoverySpeed: 0.15
+  movementSpreadMultiplier: 2.5
+  magazineSize: 5
+  maxReserveAmmo: 15
+  reloadTime: 2.8
+  projectileSpeed: 120
+  magazinePerHand: 0
+  maxSimultaneousShots: 1
+  silenced: 0
+  visibleTracer: 1
+  effectiveRange: 20
+  burstInterval: 0.12
+  chokeChargeTime: 0.8
+  chargedSpreadMultiplier: 0.35
+  spinUpTime: 0
+  equippedMoveMultiplier: 1
+  sprintMultiplier: 1
+  meleeRange: 0
+  meleeArcDegrees: 0
+  barrierDamageMultiplier: 1
+  shotsToUnlockSpecial: 0
+  projectilePrefab: {fileID: 0}
+  muzzleFlashColor: {r: 0.219608, g: 0.800000, b: 0.909804, a: 1}
+  specialWeapon: {fileID: 0}
